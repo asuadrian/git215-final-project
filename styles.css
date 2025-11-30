@@ -1,0 +1,343 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+:root {
+    --off-white: #F5F5F0;
+    --cream: #F2EFE7;
+    --beige: #E6D8C3;
+    --apricot-cream: #FCD29F;
+    --lt-brown: #C2A68C;
+    --lt-blue: #9ACBD0;
+    --lt-blue2: #A0CED9;
+    --palm-leaf: #758E4F;
+    --green: #5D866C;
+    --md-blue: #48A6A7;
+    --baltic-blue: #416788;
+    --dk-blue: #006A71;
+    --dk-amethyst: #0D0630;
+
+    --red: #A90512;
+    --white: #fff;
+
+    --box-shadow-sm: 5px 5px 12px 1px var(--green);
+    --box-shadow-lg: 10px 10px 14px 1px var(--green);
+
+    --fonts: 'cormorant-garamond', 'Times New Roman', serif;
+}
+
+body {
+    width: 1440px;
+    margin: 0 auto;
+    font-family: var(--fonts);
+    background-image: url('images/blue-snow.webp');
+}
+
+header {
+    background-color: var(--md-blue);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 4rem;
+    padding: 2rem;
+}
+
+header a {
+    color: var(--cream);
+    text-decoration: none;
+}
+
+nav {
+    margin: auto 0;
+}
+
+nav ul {
+    display: flex;
+    padding: 2rem;
+}
+
+nav ul li {
+    margin: auto;
+}
+
+nav a {
+    display: block;
+    background-color: var(--dk-blue);
+    color: var(--cream);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 160px;
+    text-align: center;
+    font-size: 1.5rem;
+    transition: 250ms;
+    box-shadow: var(--box-shadow-sm);
+}
+
+nav a:hover {
+    background-color: var(--cream);
+    color: var(--dk-blue);
+    box-shadow: var(--box-shadow-lg);
+}
+
+nav a:focus {
+    background-color: var(--baltic-blue);
+}
+
+nav a.current {
+    background-color: var(--dk-amethyst);
+    color: var(--cream);
+}
+
+nav a.current:hover {
+    background-color: var(--cream);
+    color: var(--dk-amethyst);
+}
+
+nav a.current:focus {
+    background-color: var(--baltic-blue);
+}
+
+header img {
+    grid-column: 1 / -1;
+}
+
+main {
+    background-color: var(--apricot-cream);
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main p {
+    max-width: 55ch;
+    margin: 1rem auto;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+section img {
+    grid-row: 1 / -1;
+    justify-self: flex-end;
+}
+
+section p {
+    margin: 0;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 0 3rem;
+    align-self: end;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: end;
+    height: 700px;
+    padding-left: 50px;
+}
+
+#contact h2 {
+    text-align: left;
+    margin: 0;
+}
+
+#contact p {
+    grid-column: 1 / 2;
+    max-width: 37ch;
+}
+
+.required {
+    color: var(--red);
+}
+
+#contact img {
+    grid-column: 1 / 2;
+    grid-row: 3 / -1;
+}
+
+form {
+    padding-top: 75px;
+    align-self: start;
+    width: 425px;
+    border: 2px solid transparent;
+}
+
+label {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0.5rem;
+    display: block;
+}
+
+input, textarea {
+    display: block;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+    width: calc(100% - 4px);
+}
+
+input:invalid, textarea:invalid {
+    border: 2px solid var(--red);
+}
+
+input:focus, textarea:focus {
+    border: 2px solid var(--md-blue);
+}
+
+fieldset {
+    border: 2px solid var(--baltic-blue);
+    display: grid;
+    grid-template-columns: 0.25fr 6fr 0.25fr 6fr;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 0.25rem 0.75rem 0.625rem;
+}
+
+legend {
+    padding: 0 2px;
+    font-size: 1.2rem;
+}
+
+input[type="radio"] + label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-size: 0;
+    border-radius: 0;
+}
+
+input[type="radio"] + label::before {
+    content: "\00a0";
+    font-size: 2.75rem;
+    line-height: 0.3;
+    border-radius: 50%;
+    display: inline-block;
+    height: 21px;
+    width: 22px;
+    text-align: center;
+    margin-right: 16px;
+    border: 2px solid var(--dk-blue);
+    background-color: var(--white);
+    padding: 2px 1px 0 0;
+}
+
+input[type="radio"]:checked + label::before {
+    content: "\2022";
+    color: var(--white);
+    background: var(--dk-blue);
+}
+
+input[type="radio"]:focus{
+	outline: none;
+}
+
+input[type=radio]:focus + label::before {
+    box-shadow: 0 0 0 2px var(--green);
+}
+
+input[type="submit"] {
+    display: block;
+    background-color: var(--dk-blue);
+    color: var(--cream);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 160px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: 250ms;
+    width: 100%;
+    border: 2px solid transparent;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--cream);
+    color: var(--dk-blue);
+}
+
+input[type="submit"]:focus {
+    border-color: var(--baltic-blue);
+}
+
+footer {
+    background-color: var(--md-blue);
+    text-align: center;
+    color: var(--cream);
+    padding: 25px;
+}
+
+footer p {
+    margin: 10px 0 20px;
+}
